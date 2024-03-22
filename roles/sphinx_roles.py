@@ -14,6 +14,8 @@
 """
 
 import os
+import re
+
 from docutils import nodes
 from pelican import Pelican
 
@@ -44,13 +46,22 @@ def doc_role(role, rawtext, text: str, lineno, inliner, options=None, content=No
 
     app: Pelican = get_pelican_app()
 
+    name = None
+    if "<" in text and ">" in text:
+        s, e = text.index("<"), text.rindex(">")
+        if s < e:
+            name, text = text[:s], text[s+1:e]
+
     sphinx_relative_path = app.settings.get("SPHINX_RELATIVE_PATH", "")
     pelican_content_path: str = app.settings.get("PATH", "")
 
     cur_file = inliner.document.current_source
     cur_dir = os.path.dirname(cur_file)
     file_name = os.path.basename(cur_file)
-    name, ext = os.path.splitext(file_name)
+    if name:
+        _, ext = os.path.splitext(file_name)
+    else:
+        name, ext = os.path.splitext(file_name)
 
     if text.startswith('/'):
         # 先看看不加 SPHINX_RELATIVE_PATH 有没有, 没有再加
