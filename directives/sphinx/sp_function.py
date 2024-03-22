@@ -1,5 +1,5 @@
 
-from ..helper.no_handle import SphinxNoHandle
+from plugins.directive_for_sphinx.directives.helper import SphinxNoHandle
 
 
 class SphinxFunction(SphinxNoHandle):

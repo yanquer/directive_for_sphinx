@@ -2,14 +2,12 @@
 from pelican.rstdirectives import Pygments
 import pelican.settings as pys
 
-from docutils.parsers.rst import Directive, directives, roles
-from docutils import nodes, utils
+from docutils.parsers.rst import directives
+from docutils import nodes
 
 from pygments import highlight
 from pygments.formatters.html import HtmlFormatter
 from pygments.lexers import TextLexer, get_lexer_by_name
-
-from ..helper.no_handle import SphinxNoHandle
 
 
 class SphinxCodeBlock(Pygments):
