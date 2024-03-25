@@ -58,10 +58,12 @@ def doc_role(role, rawtext, text: str, lineno, inliner, options=None, content=No
     cur_file = inliner.document.current_source
     cur_dir = os.path.dirname(cur_file)
     file_name = os.path.basename(cur_file)
-    if name:
-        _, ext = os.path.splitext(file_name)
-    else:
-        name, ext = os.path.splitext(file_name)
+    # if name:
+    #     _, ext = os.path.splitext(file_name)
+    # else:
+    #     name, ext = os.path.splitext(file_name)
+    if not name:
+        name = text[text.rindex("/")+1:] if "/" in text else text
 
     if text.startswith('/'):
         # 先看看不加 SPHINX_RELATIVE_PATH 有没有, 没有再加
@@ -82,7 +84,7 @@ def doc_role(role, rawtext, text: str, lineno, inliner, options=None, content=No
     # ref_node = nodes.reference()
     # ref_node['refuri'] = doc_url  # 设置链接的目标 URL
     # ref_node.append(nodes.Text(name))  # 设置显示文本
-
+    # print(cur_file, doc_url)
     return [doc_util_reference(doc_url, name)], []
 
 
