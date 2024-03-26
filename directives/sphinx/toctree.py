@@ -9,7 +9,7 @@ from docutils.nodes import Node
 from pelican import Pelican
 
 
-from ..helper import SphinxNoHandle
+from ..helper import DirectiveNoHandle
 from ...common import get_pelican_app, pelican_html_a_tag
 
 
@@ -19,7 +19,7 @@ def int_or_nothing(argument: str) -> int:
     return int(argument)
 
 
-class SphinxTocTree(SphinxNoHandle):
+class SphinxTocTree(DirectiveNoHandle):
     """sphinx-toctree directive, in pelican nothing do"""
 
     has_content = True

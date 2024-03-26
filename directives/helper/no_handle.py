@@ -4,7 +4,7 @@ from docutils import nodes, utils
 from docutils.parsers.rst import Directive, directives, roles
 
 
-class SphinxNoHandle(Directive):
+class DirectiveNoHandle(Directive):
     """nothing do"""
 
     def run(self):

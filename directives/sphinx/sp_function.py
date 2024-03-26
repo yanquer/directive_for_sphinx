@@ -1,8 +1,8 @@
 
-from plugins.directive_for_sphinx.directives.helper import SphinxNoHandle
+from ...directives.helper import DirectiveNoHandle
 
 
-class SphinxFunction(SphinxNoHandle):
+class SphinxFunction(DirectiveNoHandle):
 
     has_content = True
 

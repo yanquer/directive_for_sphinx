@@ -8,6 +8,7 @@ CHANGE LOG
 - fix doc role name error
 - support doc role with SPHINX_RELATIVE_PATH if your old-doc-path is special
 - with toctree directive, can get real link
+- support figure's relation-path to absolute-path
 
 0.1.0 <2024-03-21>
 ----------------------------

@@ -1,7 +1,7 @@
-from plugins.directive_for_sphinx.directives.helper import SphinxNoHandle
+from ...directives.helper import DirectiveNoHandle
 
 
-class Post(SphinxNoHandle):
+class Post(DirectiveNoHandle):
     """
         Directive for sphinx-extension-ablog, don't need hand
     """

@@ -46,6 +46,14 @@ such as::
         font-size: 19px;
     }
 
+figure
+------------------
+
+with STATIC_PATH , auto find where is and convert relative-path to absolute-path
+
+
+IMAGE_AUTO_ALT
+    if auto create alt with "as you see" when alt no set
 
 
 

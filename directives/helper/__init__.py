@@ -1,4 +1,4 @@
-from .no_handle import SphinxNoHandle
+from .no_handle import DirectiveNoHandle
 
 
 
