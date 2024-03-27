@@ -29,7 +29,7 @@ def html_a_tag_with_div(href: str, name: str):
 
 
 def html_a_tag(href: str, name: str):
-    return '<a class="sphinx-toc-tree" href=\"' + href + '\">' + name + '</>'
+    return '<a class="sphinx-toc-tree" href=\"' + href + '\">' + name + '</a>'
 
 
 def pelican_html_a_tag(href: str, name: str, div=False):
