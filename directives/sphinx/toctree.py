@@ -66,6 +66,8 @@ class SphinxTocTree(DirectiveNoHandle):
 
         app: Pelican = get_pelican_app()
         all_link = [self.each_link_node(app.path, current_file, link_name) for link_name in self.content.data if link_name]
+        all_link.insert(0, "<div class='sphinx-toc-tree-box'>")
+        all_link.append("</div>")
         parse_content = "\n".join(all_link)
         return [nodes.raw("", parse_content, format="html")]
 
