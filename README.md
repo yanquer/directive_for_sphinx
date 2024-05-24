@@ -56,6 +56,30 @@ IMAGE_AUTO_ALT
     if auto create alt with "as you see" when alt no set
 
 
+function
+------------------
 
+you should has css like
+
+```css 
+/* 新增的 function 指令 */
+.rst-function.section{
+	margin: 5px 0;
+}
+.rst-function.section strong{
+	background-color: #273f47;
+	border-radius: 5px;
+	padding: 0 5px;
+}
+.rst-function.section strong::before{
+	font-family: "Font Awesome 6 Free Web";
+	content: "\e184";
+    margin-right: 0.5em;
+}
+
+.rst-function.section > *:not(:first-child){
+	margin-left: 1em;
+}
+```
 
 
